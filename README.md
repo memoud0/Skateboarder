@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# Skateboarding Travel App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This web application is designed to enhance the urban skateboarding experience by calculating skateboard travel times and displaying nearby skateparks. It uses the **Mapbox API** to provide real-time mapping, route calculations, and markers for local skateparks, allowing users to easily navigate to skateparks from their current location.
 
-Currently, two official plugins are available:
+## Features
+- **Mapbox API Integration**: Displays a fully interactive map centered on the user’s current location.
+- **Skatepark Markers**: Skateparks are marked on the map, and users can click the markers to view information.
+- **Route Calculation**: When a skatepark marker is clicked, the app calculates and displays the route from the user’s current location to the skatepark with an estimated travel time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React**: For building the UI components and managing state.
+- **Mapbox GL JS**: For map rendering and interactive features.
+- **Mapbox Directions API**: For route calculation.
+- **Geolocation API**: To find the user’s current location.
 
-## Expanding the ESLint configuration
+## Prerequisites
+Before you can run this project, make sure you have the following installed:
+- **Node.js** and **npm**: Make sure you have the latest stable versions.
+- **Mapbox Access Token**: You need to create a free account on [Mapbox](https://account.mapbox.com/) and generate a public access token.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
